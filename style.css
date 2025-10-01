@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1a1f2e;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    color: #e0e6f0;
+}
+
+.container {
+    background: #2a2f4a;
+    padding: 40px 30px;
+    border-radius: 20px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    text-align: center;
+}
+
+h1 {
+    font-size: 34px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    color: #f5f7fa;
+    letter-spacing: 1px;
+}
+
+.todo-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+#tarefaInput {
+    flex: 1;
+    padding: 14px 15px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: 1px solid #3b3f5a;
+    background: #1f243a;
+    color: #f5f7fa;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#tarefaInput:focus {
+    border-color: #5a7fff;
+    box-shadow: 0 0 10px #5a7fff50;
+}
+
+#adicionarBtn {
+    padding: 14px;
+    background-color: #5a7fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#adicionarBtn:hover {
+    background-color: #3f5be0;
+    box-shadow: 0 5px 15px rgba(90,127,255,0.3);
+}
+
+#listaTarefas {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.tarefa {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #1f243a;
+    padding: 14px 18px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    transition: all 0.3s ease, transform 0.3s ease;
+}
+
+.tarefa:hover {
+    background-color: #2e3453;
+}
+
+.tarefa span {
+    flex: 1;
+    word-break: break-word;
+    transition: color 0.3s ease;
+}
+
+.tarefa.concluida span {
+    text-decoration: line-through;
+    color: #888;
+    opacity: 0.7;
+}
+
+.tarefa button {
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 8px;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarefa button.concluir {
+    background-color: #4caf50;
+}
+
+.tarefa button.concluir:hover {
+    background-color: #3a9a3a;
+}
+
+.tarefa button.deletar {
+    background-color: #e74c3c;
+}
+
+.tarefa button.deletar:hover {
+    background-color: #c0392b;
+}
+
+#listaTarefas::-webkit-scrollbar {
+    width: 6px;
+}
+
+#listaTarefas::-webkit-scrollbar-thumb {
+    background-color: #5a7fff80;
+    border-radius: 3px;
+}
+
+/* Animações */
+.tarefa.entrada {
+    transform: translateY(-20px);
+    opacity: 0;
+    animation: slideIn 0.3s forwards;
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
